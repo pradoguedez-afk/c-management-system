@@ -1,0 +1,55 @@
+# Project: sistema_gestion
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = src/main.o src/menu.o src/client.o src/client_manager.o src/clients_menu.o src/clients_file.o "src/product\ .o" src/product_manager.o src/products_menu.o src/products_file.o
+LINKOBJ  = src/main.o src/menu.o src/client.o src/client_manager.o src/clients_menu.o src/clients_file.o "src/product .o" src/product_manager.o src/products_menu.o src/products_file.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/maste/OneDrive/Desktop/sistema_gestion_c/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Users/maste/OneDrive/Desktop/sistema_gestion_c/include"
+BIN      = sistema_gestion.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/main.o: src/main.c
+	$(CC) -c src/main.c -o src/main.o $(CFLAGS)
+
+src/menu.o: src/menu.c
+	$(CC) -c src/menu.c -o src/menu.o $(CFLAGS)
+
+src/client.o: src/client.c
+	$(CC) -c src/client.c -o src/client.o $(CFLAGS)
+
+src/client_manager.o: src/client_manager.c
+	$(CC) -c src/client_manager.c -o src/client_manager.o $(CFLAGS)
+
+src/clients_menu.o: src/clients_menu.c
+	$(CC) -c src/clients_menu.c -o src/clients_menu.o $(CFLAGS)
+
+src/clients_file.o: src/clients_file.c
+	$(CC) -c src/clients_file.c -o src/clients_file.o $(CFLAGS)
+
+"src/product\ .o": src/product\ .c
+	$(CC) -c "src/product .c" -o "src/product .o" $(CFLAGS)
+
+src/product_manager.o: src/product_manager.c
+	$(CC) -c src/product_manager.c -o src/product_manager.o $(CFLAGS)
+
+src/products_menu.o: src/products_menu.c
+	$(CC) -c src/products_menu.c -o src/products_menu.o $(CFLAGS)
+
+src/products_file.o: src/products_file.c
+	$(CC) -c src/products_file.c -o src/products_file.o $(CFLAGS)
