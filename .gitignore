@@ -1,0 +1,22 @@
+# Ejecutables
+*.exe
+
+# Archivos compilados
+*.o
+*.gch
+
+# Datos
+*.dat
+
+# Python
+__pycache__/
+*.pyc
+
+# Imágenes generadas (opcional)
+*.png
+
+# CSV (si son datos temporales)
+*.csv
+
+# Carpetas
+bin/

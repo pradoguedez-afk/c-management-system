@@ -7,6 +7,7 @@ void show_main_menu(void) {
     printf("\n=== MANAGEMENT SYSTEM ===\n");
     printf("1. Manage clients\n");
     printf("2. Manage products\n");
+    printf("3. Manage sales\n");
     printf("0. Exit\n");
     printf("Select an option: ");
 }

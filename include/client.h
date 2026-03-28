@@ -9,7 +9,7 @@ typedef struct {
 	
 	
 Client* create_client (int id, const char* name );
-void printf_client ( const Client*  client );
+void print_client ( const Client*  client );
 void free_client (Client* client);
 
 

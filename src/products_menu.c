@@ -10,6 +10,7 @@ void products_menu(Product** products, int* count)
     int id;
     char name[100];
     float price;
+    int stock; 
 
     do {
         printf("\n=== PRODUCTS MENU ===\n");
@@ -33,7 +34,10 @@ void products_menu(Product** products, int* count)
                 printf("Product price: ");
                 scanf("%f", &price);
 
-                *products = add_product(*products, count, id, name, price);
+                printf("Stock: ");
+                scanf("%d", &stock);
+
+                *products = add_product(*products, count, id, name, price, stock);
                 printf("\nProduct added successfully!\n");
                 break;
 
@@ -68,7 +72,10 @@ void products_menu(Product** products, int* count)
                 printf("New product price: ");
                 scanf("%f", &price);
 
-                if (edit_product(*products, *count, id, name, price)) {
+                printf("New stock: ");
+                scanf("%d", &stock);
+
+                if (edit_product(*products, *count, id, name, price, stock)) {
                     printf("\nProduct updated successfully!\n");
                 } else {
                     printf("\nProduct not found.\n");
