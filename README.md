@@ -17,6 +17,7 @@ The system was designed focusing on **dynamic memory management**, **modular des
 - 📊 Stock Management (integrated with sales)
 - 💾 Binary Persistence for Clients and Products (.dat)
 - 📄 CSV Export for Sales (reporting)
+- 📊 Data Analysis Module (Python integration with charts generation)
 
 ---
 
@@ -40,6 +41,24 @@ The sales module ensures:
 - Stock is updated after each transaction
 - Rollback mechanisms prevent inconsistent states
 
+## 📊 Data Analysis (Python Module)
+
+This project includes a complementary Python script (`analysis.py`) used for data analysis and visualization.
+
+The script processes the generated `sales.csv` file and produces graphical insights such as:
+
+- Revenue per product
+- Quantity of products sold
+- Visual sales trends
+
+This demonstrates integration between low-level systems programming (C) and high-level data analysis (Python).
+
+
 ---
 
 ## 📁 Project Structure
+/src        → C source code
+/include    → Header files
+/data       → Persistent storage
+analysis.py → Data analysis and visualization
+sales.csv   → Generated sales data
