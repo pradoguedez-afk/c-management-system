@@ -1,22 +1,18 @@
-# Ejecutables
+# Executables
 *.exe
+*.out
 
-# Archivos compilados
+# Compiled objects
 *.o
-*.gch
 
-# Datos
+# Dev files
+*.dev
+*.layout
+
+# Data files (generated at runtime)
 *.dat
-
-# Python
-__pycache__/
-*.pyc
-
-# Imágenes generadas (opcional)
-*.png
-
-# CSV (si son datos temporales)
 *.csv
 
-# Carpetas
-bin/
+# OS
+.DS_Store
+Thumbs.db

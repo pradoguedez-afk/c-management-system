@@ -4,6 +4,12 @@
 #include "ventas_menu.h"
 #include "ventas.h"
 
+
+/**
+ * @brief Imprime en consola el menú visual de opciones de ventas.
+ * * Muestra las opciones disponibles para el usuario, incluyendo registro,
+ * listado, búsqueda y eliminación de ventas.
+ */
 static void show_sales_menu(void)
 {
     printf("\n=== SALES MENU ===\n");
@@ -17,6 +23,11 @@ static void show_sales_menu(void)
     printf("Select an option: ");
 }
 
+/**
+ * @brief Limpia el búfer de entrada estándar (stdin).
+ * * Consume los caracteres restantes en el búfer hasta encontrar un salto de línea
+ * o el final del archivo (EOF) para evitar errores en lecturas posteriores.
+ */
 static void clear_input_buffer(void)
 {
     int ch;
@@ -24,6 +35,13 @@ static void clear_input_buffer(void)
     }
 }
 
+
+/**
+ * @brief Realiza una lectura segura de un número entero desde consola.
+ * * @param prompt Mensaje de texto a mostrar al usuario.
+ * @param value Puntero a la variable donde se almacenará el entero leído.
+ * @return int Retorna 1 si la lectura fue exitosa, 0 en caso contrario.
+ */
 static int read_int_safe(const char* prompt, int* value)
 {
     int result;
@@ -42,6 +60,15 @@ static int read_int_safe(const char* prompt, int* value)
     return 1;
 }
 
+
+/**
+ * @brief Realiza una lectura segura de una fecha (Año, Mes, Día).
+ * * @param prompt Mensaje informativo para el usuario.
+ * @param year Puntero para almacenar el año.
+ * @param month Puntero para almacenar el mes.
+ * @param day Puntero para almacenar el día.
+ * @return int Retorna 1 si se leyeron los 3 valores correctamente, 0 en caso contrario.
+ */
 static int read_date_safe(const char* prompt, int* year, int* month, int* day)
 {
     int result;
@@ -60,6 +87,11 @@ static int read_date_safe(const char* prompt, int* year, int* month, int* day)
     return 1;
 }
 
+
+/**
+ * @brief Muestra mensajes de retroalimentación basados en el resultado de una operación de ventas.
+ * * @param res Enumeración de tipo VentasResult que indica el estado de la operación.
+ */
 static void print_ventas_result(VentasResult res)
 {
     switch (res) {
@@ -94,6 +126,18 @@ static void print_ventas_result(VentasResult res)
     }
 }
 
+/**
+ * @brief Función principal del submenú de ventas.
+ * * Gestiona el bucle de interacción para todas las operaciones de venta.
+ * Se encarga de la validación inicial de datos, gestión de memoria dinámica 
+ * para productos en una venta y la llamada a las funciones de lógica de negocio.
+ * * @param sales Puntero al arreglo dinámico de punteros de Sale.
+ * @param sale_count Puntero al contador total de ventas registradas.
+ * @param clients Arreglo constante de clientes existentes.
+ * @param client_count Cantidad de clientes registrados.
+ * @param products Arreglo de productos disponibles.
+ * @param product_count Cantidad de productos en inventario.
+ */
 void ventas_menu(Sale** sales, int* sale_count,
                  const Client* clients, int client_count,
                  Product* products, int product_count)
